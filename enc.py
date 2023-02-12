@@ -16,7 +16,8 @@ class data:
         enkey = b64.urlsafe_b64encode(skey)
         akey = f(enkey)
         cmp = akey.encrypt(data.encode())
-        al = cmp.replace('b\'', '')
+        cla = str(cmp)
+        al = cla.replace('b\'', '')
         end = al.replace('\'', '')
         try:
             os.chdir('encryption')
