@@ -26,17 +26,17 @@ class data:
             os.chdir('encryption')
         file = open(f'{time} - OUTPUT',"w")
         file.write(f'OUTPUT AT {time}\n\n{end}')
-        print("Job Completed")
+        print("\nJob Completed\n")
     
     def askencryption():
-        idata = input('What item would you like to encrypt?\n')
+        idata = input('\nWhat item would you like to encrypt?\n')
         ikey = input('\nYour passkey?\n[WARNING] Your passkey cannot be longer than 32 digits. [WARNING]\n')
 
         data.encryption(idata,ikey)
 
     def askdecryption():
-        addata = input('What item would you like to decrypt?')
-        adkey = input('What is the key?')
+        addata = input('\nWhat item would you like to decrypt?\n')
+        adkey = input('\nWhat is the key?\n')
 
         data.decryption(addata,adkey)
 
@@ -59,4 +59,4 @@ class data:
             os.chdir('decryption')
         file = open(f'{time} - OUTPUT',"w")
         file.write(f'OUTPUT AT {time}\n\n{dnp}')
-        print("Job Completed")
+        print("\nJob Completed\n")
