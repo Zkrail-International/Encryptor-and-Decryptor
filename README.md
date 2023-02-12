@@ -8,5 +8,4 @@ Just run the main file. Wherever you are running the python file from, is where 
 
 DEPENDENCIES:
 
-base64 module
-\ncryptography module
+base64 module & cryptography module
