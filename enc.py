@@ -26,7 +26,7 @@ class data:
             os.chdir('encryption')
         file = open(f'{time} - OUTPUT',"w")
         file.write(f'OUTPUT AT {time}\n\n{end}')
-        print("\nJob Completed\n")
+        print(f'\nJob Completed\nOutput:\n{end}')
     
     def askencryption():
         idata = input('\nWhat item would you like to encrypt?\n')
@@ -59,4 +59,4 @@ class data:
             os.chdir('decryption')
         file = open(f'{time} - OUTPUT',"w")
         file.write(f'OUTPUT AT {time}\n\n{dnp}')
-        print("\nJob Completed\n")
+        print(f'\nJob Completed\nOutput:\n{dnp}')
