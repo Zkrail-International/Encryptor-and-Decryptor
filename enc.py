@@ -17,7 +17,7 @@ class data:
         akey = f(enkey)
         cmp = akey.encrypt(data.encode())
         cla = str(cmp)
-        al = al[1:]
+        al = cla[1:]
         al = al[1:]
         end = al[:-1]
         try:
