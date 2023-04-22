@@ -17,8 +17,9 @@ class data:
         akey = f(enkey)
         cmp = akey.encrypt(data.encode())
         cla = str(cmp)
-        al = cla.replace('b\'', '')
-        end = al.replace('\'', '')
+        al = al[1:]
+        al = al[1:]
+        end = al[:-1]
         try:
             os.chdir('encryption')
         except:
