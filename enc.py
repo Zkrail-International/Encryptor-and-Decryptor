@@ -7,11 +7,16 @@ class data:
 
     def encryption(data,key):
         time = datetime.now()
+        key = key.replace(" ","")
         while True:                 # Ran into a problem where it had to be 32 digits, so I used this little code here to fix it.
-            if len(key) == 32:      # Sadly it breaks if you have a key more than 32 digits.
-                break               # I will work on that later. Probably.
-            elif len(key) != 32:
+            if len(key) == 32:      # Used to break if you have a key more than 32 digits.
+                break               # I fixed it.
+            elif len(key) < 32:
                 key = f'{key}s'
+            elif len(key) > 32:
+                key = key[:-1]
+            else:
+                break
         al = ((str(f(b64.urlsafe_b64encode(bytes(key,encoding='utf-8'))).encrypt(data.encode()))[1:])[1:])[:-1]
         try:
             os.chdir('encryption')
@@ -39,11 +44,15 @@ class data:
 
     def decryption(data,key):
         time = datetime.now()
-        while True:
-            if len(key) == 32:
-                break
-            elif len(key) != 32:
+        while True:                
+            if len(key) == 32:      
+                break               
+            elif len(key) < 32:
                 key = f'{key}s'
+            elif len(key) > 32:
+                key = key[:-1]
+            else:
+                break
         dnp = f(b64.urlsafe_b64encode(bytes(key,encoding='utf-8'))).decrypt(bytes(data,encoding='utf-8')).decode()
         try:
             os.chdir('decryption')
