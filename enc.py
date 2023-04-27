@@ -28,7 +28,7 @@ class data:
     
     def askencryption():
         idata = input('\nWhat item would you like to encrypt?\n')
-        ikey = input('\nYour passkey?\n[WARNING] Your passkey cannot be longer than 32 digits. [WARNING]\n')
+        ikey = input('\nYour passkey?\n')
         try:
             data.encryption(idata,ikey)
         except:
