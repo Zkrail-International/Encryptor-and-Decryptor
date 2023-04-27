@@ -17,17 +17,15 @@ class data:
         akey = f(enkey)
         cmp = akey.encrypt(data.encode())
         cla = str(cmp)
-        al = cla[1:]
-        al = al[1:]
-        end = al[:-1]
+        al = ((cla[1:])[1:])[:-1]
         try:
             os.chdir('encryption')
         except:
             os.mkdir('encryption')
             os.chdir('encryption')
         file = open(f'{time} - OUTPUT',"w")
-        file.write(f'OUTPUT AT {time}\n\n{end}')
-        print(f'\nJob Completed\nOutput:\n{end}')
+        file.write(f'OUTPUT AT {time}\n\n{al}')
+        print(f'\nJob Completed\nOutput:\n{al}')
     
     def askencryption():
         idata = input('\nWhat item would you like to encrypt?\n')
