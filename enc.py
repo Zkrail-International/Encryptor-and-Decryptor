@@ -12,8 +12,7 @@ class data:
                 break               # I will work on that later. Probably.
             elif len(key) != 32:
                 key = f'{key}s'
-        akey = f(b64.urlsafe_b64encode(bytes(key,encoding='utf-8')))
-        al = ((str(akey.encrypt(data.encode()))[1:])[1:])[:-1]
+        al = ((str(f(b64.urlsafe_b64encode(bytes(key,encoding='utf-8'))).encrypt(data.encode()))[1:])[1:])[:-1]
         try:
             os.chdir('encryption')
         except:
@@ -45,8 +44,7 @@ class data:
                 break
             elif len(key) != 32:
                 key = f'{key}s'
-        akey = f(b64.urlsafe_b64encode(bytes(key,encoding='utf-8')))
-        dnp = akey.decrypt(bytes(data,encoding='utf-8')).decode()
+        dnp = f(b64.urlsafe_b64encode(bytes(key,encoding='utf-8'))).decrypt(bytes(data,encoding='utf-8')).decode()
         try:
             os.chdir('decryption')
         except:
