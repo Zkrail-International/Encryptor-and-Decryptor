@@ -30,14 +30,18 @@ class data:
     def askencryption():
         idata = input('\nWhat item would you like to encrypt?\n')
         ikey = input('\nYour passkey?\n[WARNING] Your passkey cannot be longer than 32 digits. [WARNING]\n')
-
-        data.encryption(idata,ikey)
+        try:
+            data.encryption(idata,ikey)
+        except:
+            print("How did you mess that up? Well, you did. Try again. Something went wrong.")
 
     def askdecryption():
         addata = input('\nWhat item would you like to decrypt?\n')
         adkey = input('\nWhat is the key?\n')
-
-        data.decryption(addata,adkey)
+        try:
+            data.decryption(addata,adkey)
+        except:
+            print("Item or Key Invalid.")
 
     def decryption(data,key):
         time = datetime.now()
