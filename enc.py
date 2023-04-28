@@ -44,6 +44,7 @@ class data:
 
     def decryption(data,key):
         time = datetime.now()
+        key = key.replace(" ","")
         while True:                
             if len(key) == 32:      
                 break               
